@@ -51,7 +51,7 @@ $ cd bottles
 When you want to save your work, stage and commit changes:
 
 ```bash
-$ git add . # the dot is important
+$ git add -A
 $ git commit -m "Explain your change"
 ```
 
