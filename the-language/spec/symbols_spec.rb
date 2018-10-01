@@ -1,7 +1,7 @@
 RSpec.describe "A symbol in Ruby" do
   it "is a Symbol" do
     symbol = :a_symbol
-    expect( symbol.is_a?( Symbol ) ).to eq( __ )
+    expect( symbol.is_a?( Symbol ) ).to eq( true )
   end
 
   it "can compare with other symbols" do
@@ -9,15 +9,15 @@ RSpec.describe "A symbol in Ruby" do
     the_same_symbol = :a_symbol
     another_symbol  = :another_symbol
 
-    expect( a_symbol == the_same_symbol ).to eq( __ )
-    expect( a_symbol == another_symbol ).to eq( __ )
+    expect( a_symbol == the_same_symbol ).to eq( true )
+    expect( a_symbol == another_symbol ).to eq( false )
   end
 
   it "is a single, internal object" do
     a_symbol        = :a_symbol
     the_same_symbol = :a_symbol
 
-    expect( a_symbol.object_id == the_same_symbol.object_id ).to eq( __ )
+    expect( a_symbol.object_id == the_same_symbol.object_id ).to eq( true )
   end
 
   it "is created for every method name" do
