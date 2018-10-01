@@ -15,24 +15,14 @@ RSpec.describe "nil in Ruby" do
       expect( exception.class ).to eq(NoMethodError)
 
       # What extra information does ruby give us?
-<<<<<<< HEAD
       expect( exception.message ).to eq("undefined method `a_method_that_does_not_exist' for nil:NilClass") # You can replace __ here with part of the message
-=======
-      expect( exception.message ).to match(/undefined method/) # You can replace __ here with part of the message
->>>>>>> 3412e6d6cd179c98120563b14840494cc6208721
     end
   end
 
   it "has a few methods defined on it" do
-<<<<<<< HEAD
     expect( nil.nil? ).to eq true
     expect( nil.to_s ).to eq("")
     expect( nil.inspect ).to eq "nil"
-=======
-    expect( nil.nil? ).to eq(true)
-    expect( nil.to_s ).to eq("")
-    expect( nil.inspect ).to eq("nil")
->>>>>>> 3412e6d6cd179c98120563b14840494cc6208721
   end
 
 end
