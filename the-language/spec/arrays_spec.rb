@@ -52,17 +52,17 @@ RSpec.describe "Ruby Arrays" do
   it "is similar to a range" do
     expect( (1..5).class ).to eq( Range )
     expect( [1,2,3,4,5] ).not_to eq( (1..5) )
-    expect( [1, 2, 3, 4, 5] ).to eq( (1..5).to_a )
-    expect( [1, 2, 3, 4] ).to eq( (1...5).to_a )
+    expect( [1,2,3,4,5] ).to eq( (1..5).to_a )
+    expect( [1,2,3,4] ).to eq( (1...5).to_a )
   end
 
   it "can be sliced by a range" do
     array = ["New York", "Paris", "London", "Milan"]
 
-    expect( ["New York", "Paris", "London"] ).to eq array[0..2]
-    expect( ["New York", "Paris"] ).to eq array[0...2]
-    expect( ["London", "Milan"] ).to eq array[2..-1]
-    expect( [] ).to eq array[-2..1]
+    expect( array.slice(0..2) ).to eq array[0..2]
+    expect( array.slice(0...2) ).to eq array[0...2]
+    expect( array.slice(2..-1) ).to eq array[2..-1]
+    expect( array.slice(-2..1) ).to eq array[-2..1]
   end
 
   it "can be used as a stack" do
@@ -70,11 +70,11 @@ RSpec.describe "Ruby Arrays" do
 
     array.push("on the end")
 
-    expect( array ).to eq( [1,2, "on the end"] )
+    expect( array ).to eq( [1, 2, "on the end"] )
 
     value = array.pop
     expect( value ).to eq( "on the end" )
-    expect( array ).to eq( [1,2] )
+    expect( array ).to eq( [1, 2] )
   end
 
   it "can be used as a queue" do

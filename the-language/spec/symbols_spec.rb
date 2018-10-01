@@ -24,61 +24,61 @@ RSpec.describe "A symbol in Ruby" do
     symbols_as_strings = Symbol.all_symbols.map { |symbol| symbol.to_s }
 
     # split is a method on String that we have used previously
-    expect( symbols_as_strings.include?("split") ).to eq( __ )
+    expect( symbols_as_strings.include?("split") ).to eq( true )
   end
 
   MagicNumber = 3
   it "is created for every constant" do
     symbols_as_strings = Symbol.all_symbols.map { |symbol| symbol.to_s }
 
-    expect( symbols_as_strings.include?("MagicNumber") ).to eq( __ )
+    expect( symbols_as_strings.include?("MagicNumber") ).to eq( true )
   end
 
   it "can be created from a string" do
     string = "helloWorld"
 
-    expect( string.to_sym ).to eq( __ )
+    expect( string.to_sym ).to eq( :helloWorld )
   end
 
   it "can be created with spaces" do
     symbol = :"hello world"
 
-    expect( symbol ).to eq( __ )
+    expect( symbol ).to eq( :"hello world" )
   end
 
   it "can be created with interpolated values" do
     value = "world"
     symbol = :"hello #{value}"
 
-    expect( symbol ).to eq( __ )
+    expect( symbol ).to eq( :"hello world" )
   end
 
   it "can be interpolated into a string" do
     symbol = :world
     string = "hello #{symbol}"
 
-    expect( string ).to eq( __ )
+    expect( string ).to eq( "hello world" )
   end
 
   it "is not a string" do
     symbol = :world
 
-    expect( symbol.is_a?(String) ).to eq( __ )
-    expect( symbol == "ruby" ).to eq( __ )
+    expect( symbol.is_a?(String) ).to eq( false )
+    expect( symbol == "ruby" ).to eq( false )
   end
 
   it "doesn't have string methods" do
     symbol = :world
 
-    expect( symbol.respond_to?(:reverse) ).to eq( __ )
-    expect( symbol.respond_to?(:split) ).to eq( __ )
+    expect( symbol.respond_to?(:reverse) ).to eq( false )
+    expect( symbol.respond_to?(:split) ).to eq( false )
   end
 
   it "can't be concatenated" do
-    expect { :hello + :world }.to raise_error( __ )
+    expect { :hello + :world }.to raise_error( NoMethodError )
   end
 
   it "can be created dynamically" do
-    expect( ("hello" + "world").to_sym ).to eq( __ )
+    expect( ("hello" + "world").to_sym ).to eq( :helloworld )
   end
 end

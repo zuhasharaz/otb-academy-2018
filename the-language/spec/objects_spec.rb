@@ -20,7 +20,7 @@ RSpec.describe "Objects in ruby" do
 
   it "has an id" do
     obj = Object.new
-    expect( obj.object_id.class ).to eq( Integer )
+    expect( obj.object_id.class ).to eq( Fixnum )
   end
 
   it "has a unique id" do
@@ -33,6 +33,9 @@ RSpec.describe "Objects in ruby" do
     expect( 0.object_id ).to eq( 1 )
     expect( 1.object_id ).to eq( 3 )
     expect( 2.object_id ).to eq( 5 )
+    expect( 5.object_id ).to eq( 11 )
+    expect( 5.object_id ).to eq( 11 )
+    expect( 25.object_id ).to eq(51)
     expect( 100.object_id ).to eq( 201 )
   end
 
