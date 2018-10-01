@@ -20,9 +20,9 @@ RSpec.describe "nil in Ruby" do
   end
 
   it "has a few methods defined on it" do
-    expect( nil.nil? ).to eq(true)
+    expect( nil.nil? ).to eq true
     expect( nil.to_s ).to eq("")
-    expect( nil.inspect ).to eq("nil")
+    expect( nil.inspect ).to eq "nil"
   end
 
 end
