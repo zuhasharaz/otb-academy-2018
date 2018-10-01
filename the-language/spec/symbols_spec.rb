@@ -1,7 +1,7 @@
 RSpec.describe "A symbol in Ruby" do
   it "is a Symbol" do
     symbol = :a_symbol
-    expect( symbol.is_a?( Symbol ) ).to eq( __ )
+    expect( symbol.is_a?( Symbol ) ).to eq(true )
   end
 
   it "can compare with other symbols" do
