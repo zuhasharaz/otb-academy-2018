@@ -7,7 +7,11 @@ RSpec.describe "Learning ruby" do
     end
 
     it "verifies our expectations against reality" do
+<<<<<<< HEAD
       expected =  2
+=======
+      expected = 2
+>>>>>>> 3412e6d6cd179c98120563b14840494cc6208721
       actual   = 1 + 1
 
       expect(actual).to be expected

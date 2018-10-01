@@ -46,7 +46,7 @@ RSpec.describe "Ruby Arrays" do
     expect( array.slice(2,20) ).to eq( ["London", "Milan"] )
     expect( array.slice(4,0) ).to eq( [] )
     expect( array.slice(4,10) ).to eq( [] )
-    expect( array.slice(5,0) ).to eq( nil ) # WHY?
+    expect( array.slice(5,0) ).to eq( nil )
   end
 
   it "is similar to a range" do
