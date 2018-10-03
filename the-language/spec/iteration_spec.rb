@@ -82,6 +82,9 @@ RSpec.describe "iterating in ruby" do
 
     # NOTE: You can create your own collections that work with each,
     # map, select, etc.
+    array = ["Hello", "Ruby", "Academy"]
+    new_array = array.map { |item| item << "-yo" }
+    expect( new_array ).to eq( ["Hello-yo", "Ruby-yo", "Academy-yo"] )
   end
 
 end
