@@ -4,8 +4,8 @@ RSpec.describe "exceptions" do
   end
 
   it "inherits from Exception" do
-    expect( MySpecialError.ancestors[1] ).to eq( __ )
-    expect( MySpecialError.ancestors[2] ).to eq( __ )
+    expect( MySpecialError.ancestors[1] ).to eq( RuntimeError )
+    expect( MySpecialError.ancestors[2] ).to eq( StandardError )
     expect( MySpecialError.ancestors[3] ).to eq( __ )
     expect( MySpecialError.ancestors[4] ).to eq( __ )
   end
@@ -14,8 +14,8 @@ RSpec.describe "exceptions" do
     result = nil
     begin
       fail "Oops"
-    rescue StandardError => ex
-      result = :exception_handled
+    rescue 
+      result = :exception_handledStandardError => ex
     end
 
     expect( result ).to eq( __ )
