@@ -55,9 +55,10 @@ describe "Ruby Constant" do
   end
 
   class MyAnimals
-    LEGS = 2
-
+    LEGS = 4
     class Bird < Animal
+      LEGS = 2
+
       def legs_in_bird
         LEGS
       end
@@ -70,7 +71,7 @@ describe "Ruby Constant" do
 
   class MyAnimals::Oyster < Animal
     def legs_in_oyster
-      LEGS
+      MyAnimals::Oyster::LEGS
     end
   end
 
