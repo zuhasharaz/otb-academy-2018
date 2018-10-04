@@ -28,10 +28,16 @@
 # Your goal is to write the score method.
 
 def score(dice)
-  # You need to write this method
+  count = 0
+  dice.each do |roll|
+    count += (dice.count(1)/3 * 1000 + (dice.count(1) % 3) * 100) / dice.count(1) if roll == 1
+    count += ((dice.count(5)/3) * 500 + (dice.count(5) % 3) * 50)/(dice.count(5)) if roll == 5
+    count += ((dice.count(roll)/3) * roll * 100)/(dice.count(roll)) if roll !=1 && roll !=5
+    end
+  count.round(-1)
 end
 
-RSpec.describe "scorign a game of greed" do
+RSpec.describe "scoring a game of greed" do
   it "scores an empty list as 0" do
     expect( score([]) ).to eq( 0 )
   end
