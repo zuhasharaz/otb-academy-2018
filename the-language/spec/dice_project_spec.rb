@@ -1,12 +1,24 @@
 # Implement a DiceSet Class here:
 #
-# class DiceSet
-#   code ...
-# end
+class DiceSet
+
+  def roll(num)
+    @num = num
+    @rolled = false
+  end
+
+  def values
+    if @rolled == false
+      @results = [1,2,3,4,5,6].shuffle.slice(0...@num)
+      @rolled = !@rolled
+    end
+    @results
+  end
+end
 #
 
 RSpec.describe "dice set" do
-  it "can create a new sice set" do
+  it "can create a new dice set" do
     dice = DiceSet.new
     expect( dice ).not_to be_nil
   end
