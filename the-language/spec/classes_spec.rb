@@ -4,7 +4,7 @@ RSpec.describe "ruby classes" do
 
   it "creates new instances of Dog with new" do
     fido = Dog1.new
-    expect( fido.class ).to eq( __ )
+    expect( fido.class ).to eq( Dog1 )
   end
 
   class Dog2
