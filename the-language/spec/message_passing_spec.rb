@@ -9,22 +9,23 @@ RSpec.describe "message passing" do
   it "can call methods directly" do
     mc = MessageCatcher.new
 
-    expect( mc.caught? ).to eq( __ )
+    expect( mc.caught? ).to eq(true )
   end
 
   it "can invoke a method with send" do
     mc = MessageCatcher.new
 
-    expect( mc.send(:caught?) ).to eq( __ )
+    expect( mc.send(:caught?) ).to eq(true )
   end
 
   it "can invoke methods more dynamically" do
     mc = MessageCatcher.new
 
-    expect( mc.send("caught?") ).to eq( __ )
-    expect( mc.send("caught" + __) ).to eq( true )    # What do you need to add to the first string?
-    expect( mc.send("CAUGHT?".__) ).to eq( true )      # What would you need to do to the string?
+    expect( mc.send("caught?")).to eq(true)
+    expect( mc.send("caught" + ?) ).to eq(true)    # What do you need to add to the first string?
+    expect( mc.send("CAUGHT?".downcase )).to eq(true)      # What would you need to do to the string?
   end
+  
 
   it "can also use __send__" do
     mc = MessageCatcher.new
