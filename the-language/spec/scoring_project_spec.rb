@@ -28,24 +28,23 @@
 # Your goal is to write the score method.
 
 def score(dice)
-  return 0 if dice == []
-  # You need to write this method
-  dice.inject(0) { |result, number| 
-    
-  if number == 5 
-    result+= 50
-    50
-  elsif number == 1 
-    result +=100
-    100
-  elsif dice.include(1,1,1)
-  1000
+ count = 0
+ 
+ (1..6).each do |num|
+   number = dice.count(num)
+   if number >= 3
+    count += num == 1 ? 1000 : num * 100
+    number -= 3
+   end
+
+   count += 100 * number if num == 1
+   count += 50 *  number if num == 5
+   
   end
-  result
-  }
-
-
+  count 
 end
+
+
 
 RSpec.describe "scorign a game of greed" do
   it "scores an empty list as 0" do
