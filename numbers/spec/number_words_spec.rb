@@ -12,5 +12,10 @@ RSpec.describe "" do
             expect(numbers_to_words(15)).to eq('fifteen')
             expect(numbers_to_words(19)).to eq('nineteen')
         end
+        it "should return the string for tens" do
+            expect(numbers_to_words(20)).to eq('twenty')
+            expect(numbers_to_words(40)).to eq('fourty')
+            expect(numbers_to_words(90)).to eq('ninety')
+        end
 	end
 end
